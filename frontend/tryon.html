@@ -1,0 +1,12 @@
+<div class="tryon-container">
+    <div class="video-wrapper" style="position: relative; width: 640px; margin: auto;">
+        <video id="webcam" autoplay playsinline width="640" height="480"></video>
+        <img id="overlay-img" src="assets/hoodie-overlay.png"
+            style="position: absolute; top: 20%; left: 25%; width: 50%; pointer-events: none;">
+    </div>
+    <div class="controls">
+        <button onclick="changeTryOnItem('assets/hoodie-overlay.png')">Hoodie</button>
+        <button onclick="changeTryOnItem('assets/cap-overlay.png')">Cap</button>
+    </div>
+</div>
+<script src="js/tryon.js"></script>
