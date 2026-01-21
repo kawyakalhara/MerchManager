@@ -1,6 +1,78 @@
-<main>
-    <h2>Our Collection</h2>
-    <div id="product-grid" class="grid">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop - University Merch</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">LOGO</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="custom.html">Custom T-Shirt</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+    <div class="nav-right">
+      <span>Admin</span>
+      <span class="cart">🛒</span>
     </div>
-</main>
-<script src="js/products.js"></script>
+  </nav>
+
+  <main class="shop-container">
+    <!-- SIDEBAR FILTER -->
+    <aside class="sidebar">
+      <h3>Filter Products</h3>
+      
+      <div class="filter-group">
+        <label>
+          <input type="checkbox" value="all" class="filter-checkbox" checked>
+          All Products
+        </label>
+      </div>
+
+      <div class="filter-group">
+        <label>
+          <input type="checkbox" value="tshirts" class="filter-checkbox">
+          T-Shirts
+        </label>
+      </div>
+
+      <div class="filter-group">
+        <label>
+          <input type="checkbox" value="hoodies" class="filter-checkbox">
+          Hoodies
+        </label>
+      </div>
+
+      <div class="filter-group">
+        <label>
+          <input type="checkbox" value="caps" class="filter-checkbox">
+          Caps
+        </label>
+      </div>
+
+      <div class="filter-group">
+        <label>
+          <input type="checkbox" value="wristbands" class="filter-checkbox">
+          Wrist Bands
+        </label>
+      </div>
+
+      <button id="clear-filters" class="btn-secondary">Clear All</button>
+    </aside>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="shop-section">
+      <h2>Our Collection</h2>
+      <div id="product-grid" class="product-grid">
+        <!-- Products will be loaded here -->
+      </div>
+    </section>
+  </main>
+
+  <script src="js/products.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">LOGO</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="custom.html">Custom T-Shirt</a></li>
+    <li><a href="cart.html">Cart</a></li>
+  </ul>
+  <div class="nav-right">
+    <span>Admin</span>
+    <span class="cart">🛒</span>
+  </div>
+</nav>
+
+<div class="product-page">
+
+  <div class="product-image">
+    <img id="productImg">
+  </div>
+
+  <div class="product-details">
+    <h1 id="productName"></h1>
+    <p id="productCategory"></p>
+
+    <p>Available Sizes:</p>
+    <div class="sizes">
+      <button>S</button>
+      <button>M</button>
+      <button class="active">L</button>
+      <button>XL</button>
+      <button>2XL</button>
+    </div>
+
+    <h2 id="productPrice"></h2>
+
+    <button class="cart-btn">ADD TO CART</button>
+  </div>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>
+
