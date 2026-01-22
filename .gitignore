@@ -1,0 +1,12 @@
+# Node dependencies
+node_modules/
+
+# SQLite databases
+*.db
+
+# Environment variables (future-proof)
+.env
+
+# OS junk
+.DS_Store
+Thumbs.db
