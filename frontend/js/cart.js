@@ -14,10 +14,9 @@ function loadCart() {
     emptyCart.style.display = 'none';
     cartContent.style.display = 'block';
 
-    // Clear existing items
+    
     cartItemsContainer.innerHTML = '';
 
-    // Display each item
     cart.forEach((product, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -30,7 +29,7 @@ function loadCart() {
         cartItemsContainer.appendChild(row);
     });
 
-    // Update totals
+
     updateCartTotals();
 }
 

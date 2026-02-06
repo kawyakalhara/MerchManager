@@ -1,33 +1,32 @@
-// Products data (same as in products.js)
-const products = [
-    // T-Shirts
-    { id: 1, name: "Alumni Tee", price: 25.00, image: "tee.jpg", category: "tshirts" },
-    { id: 2, name: "Campus Classic Tee", price: 20.00, image: "tee2.jpg", category: "tshirts" },
-    { id: 3, name: "Event T-Shirt 2024", price: 22.00, image: "tee3.jpg", category: "tshirts" },
-    
-    // Hoodies
-    { id: 4, name: "Varsity Hoodie", price: 45.00, image: "hoodie.jpg", category: "hoodies" },
-    { id: 5, name: "Winter Hoodie", price: 50.00, image: "hoodie2.jpg", category: "hoodies" },
-    { id: 6, name: "Classic Blue Hoodie", price: 48.00, image: "hoodie3.jpg", category: "hoodies" },
-    
-    // Caps
-    { id: 7, name: "Campus Cap", price: 15.00, image: "cap.jpg", category: "caps" },
-    { id: 8, name: "Sport Cap", price: 18.00, image: "cap2.jpg", category: "caps" },
-    { id: 9, name: "Classic Baseball Cap", price: 16.00, image: "cap3.jpg", category: "caps" },
-    
-    // Wrist Bands
-    { id: 10, name: "University Wrist Band", price: 8.00, image: "wristband.jpg", category: "wristbands" },
-    { id: 11, name: "Colored Wrist Band Pack", price: 12.00, image: "wristband2.jpg", category: "wristbands" },
-    { id: 12, name: "Premium Wrist Band", price: 10.00, image: "wristband3.jpg", category: "wristbands" }
-];
+let products = [];
+let filteredProducts = [];
 
-// Get product ID from URL
+
+function loadProductsFromAPI(callback) {
+    fetch("http://localhost:3000/api/products")
+        .then(function(res) {
+            if (!res.ok) throw new Error("Failed to fetch products");
+            return res.json();
+        })
+        .then(function(data) {
+            products = data;
+            filteredProducts = [...products];
+            if (callback) callback();
+        })
+        .catch(function(err) {
+            console.error("Error loading products:", err);
+        });
+}
+
+
+
+
 function getProductIdFromURL() {
     const params = new URLSearchParams(window.location.search);
     return parseInt(params.get('id'));
 }
 
-// Load product details
+
 function loadProductDetails() {
     const productId = getProductIdFromURL();
     const product = products.find(p => p.id === productId);
@@ -105,9 +104,12 @@ function handleSizeSelection() {
     });
 }
 
-// Initialize
-window.onload = () => {
-    loadProductDetails();
-    handleSizeSelection();
-    updateCartCount();
+
+
+window.onload = function() {
+    loadProductsFromAPI(function() {
+        loadProductDetails(); 
+        handleSizeSelection();
+        updateCartCount();
+    });
 };

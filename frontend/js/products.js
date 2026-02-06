@@ -1,13 +1,7 @@
 console.log("products.js loaded");
-// ===============================
-// GLOBAL STATE
-// ===============================
 let products = [];
 let filteredProducts = [];
 
-// ===============================
-// FETCH PRODUCTS FROM BACKEND
-// ===============================
 fetch("http://localhost:3000/api/products")
     .then(res => {
         if (!res.ok) {
@@ -27,9 +21,6 @@ fetch("http://localhost:3000/api/products")
         console.error("Error loading products:", err);
     });
 
-// ===============================
-// DISPLAY PRODUCTS
-// ===============================
 function displayProducts(productsToShow = products) {
     const grid = document.getElementById("product-grid");
     if (!grid) return;
@@ -43,7 +34,13 @@ function displayProducts(productsToShow = products) {
         .map(
             product => `
         <div class="product-card" onclick="viewProduct(${product.id})">
-          <img src="assets/${product.image}" alt="${product.name}" width="100%">
+          <div class="img-box">
+          <img src="assets/${product.image}" alt="${product.name}" >
+          
+          </div>
+
+          
+
           <h3>${product.name}</h3>
           <p class="price">Rs. ${product.price}</p>
           <button class="btn"
@@ -56,9 +53,9 @@ function displayProducts(productsToShow = products) {
         .join("");
 }
 
-// ===============================
-// FILTER PRODUCTS
-// ===============================
+
+// Filter products
+
 function filterProducts() {
     const checkboxes = document.querySelectorAll(".filter-checkbox:checked");
     const selectedCategories = Array.from(checkboxes).map(cb => cb.value);
@@ -74,9 +71,9 @@ function filterProducts() {
     displayProducts(filteredProducts);
 }
 
-// ===============================
-// FILTER LISTENERS
-// ===============================
+
+// Filter listeners
+
 function setupFilterListeners() {
     const checkboxes = document.querySelectorAll(".filter-checkbox");
 
