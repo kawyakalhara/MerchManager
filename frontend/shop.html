@@ -4,33 +4,31 @@
 <head>
   <meta charset="UTF-8" />
   <title>Shop - University Merch</title>
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/shop.css">
 </head>
 
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">LOGO</div>
-    <ul>
+
+<nav class="navbar">
+  <div class="logo">LOGO</div>
+
+  <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="shop.html">Shop</a></li>
-      <li><a href="custom.html">Custom T-Shirt</a></li>
       <li><a href="cart.html">Cart</a></li>
     </ul>
-    <div class="nav-right">
-      <span>Admin</span>
-      <span class="cart">🛒</span>
-    </div>
-  </nav>
+</nav>
+
 
   <main class="shop-container">
-    <!-- SIDEBAR FILTER -->
+    
     <div class="sidebar">
       <h3>Filter Products</h3>
 
       <div class="filter-group">
         <label>
-          <input type="checkbox" value="all" class="filter-checkbox" checked />
+          <input type="checkbox" value="all" class="filter-checkbox" checked>
           All Products
         </label>
       </div>
@@ -63,21 +61,20 @@
         </label>
       </div>
 
-      <button id="clear-filters" class="btn-secondary">
+      <button type="reset" class="btn-secondary">
         Clear All
       </button>
     </div>
 
-    <!-- PRODUCTS SECTION -->
+    <!-- products -->
+     
     <section class="shop-section">
       <h2>Our Collection</h2>
       <div id="product-grid" class="product-grid">
-        <!-- Products injected here -->
       </div>
     </section>
   </main>
 
-  <!-- IMPORTANT: script at bottom -->
   <script src="js/products.js"></script>
 </body>
 

@@ -12,6 +12,7 @@
   padding: 15px;
   display: flex;
   justify-content: space-between;
+  position: sticky;
 }
 
 .navbar ul {
@@ -56,10 +57,11 @@
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  box-shadow: #333;
+ 
 }
 .btn:hover {
   background: #E67E22;
+  box-shadow: #333;
 }
 
 .btn-secondary {
@@ -98,12 +100,13 @@
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 50px;
 }
 
 .product-card {
-  width: 100%;
+  height: 500px;
+  width: 350px;
   text-align: center;
   padding: 10px;
   border: 1px solid #e5e5e5;
@@ -116,21 +119,21 @@
 }
 
 .product-card img {
-  width: 100%;
-  height: 200px;
+  width: auto;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 10px;
 }
 
-.product-card h3 {
-  font-size: 16px;
-  margin: 10px 0;
-  color: #333;
+.product-title {
+  font-size: 20px;
+  margin-top: 100px;
+  color: #111111;
 }
 
 .img-box {
-  height: 200px;
+  height: 400px;
   background: #ddd;
   border-radius: 15px;
   margin-bottom: 10px;
@@ -143,100 +146,4 @@
   margin: 10px 0;
 }
 
-/* SHOP PAGE - SIDEBAR LAYOUT */
-.shop-container {
-  display: flex;
-  gap: 30px;
-  padding: 40px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
 
-.sidebar {
-  width: 220px;
-  background: #F9FAFB;
-  padding: 20px;
-  border-radius: 8px;
-  height: fit-content;
-  position: sticky;
-  top: 20px;
-}
-
-.sidebar h3 {
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: #1E3A8A;
-}
-
-.filter-group {
-  margin-bottom: 15px;
-}
-
-.filter-group label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  color: #333;
-  font-size: 14px;
-}
-
-.filter-group input[type="checkbox"] {
-  cursor: pointer;
-  width: 18px;
-  height: 18px;
-}
-
-.shop-section {
-  flex: 1;
-}
-
-.shop-section h2 {
-  margin-bottom: 30px;
-  color: #1E3A8A;
-  font-size: 24px;
-}
-
-.no-products {
-  text-align: center;
-  color: #6B7280;
-  padding: 40px;
-  font-size: 16px;
-}
-
-/* CATEGORIES */
-.categories {
-  padding: 40px;
-  display: flex;
-  gap: 40px;
-}
-
-.category-card {
-  width: 180px;
-  text-align: center;
-}
-
-.category-card button {
-  margin-top: 8px;
-  padding: 6px 12px;
-  border: none;
-  background: #ccc;
-  cursor: pointer;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .shop-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .sidebar {
-    width: 100%;
-    position: static;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-}
