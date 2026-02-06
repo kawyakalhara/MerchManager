@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">LOGO</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="custom.html">Custom T-Shirt</a></li>
+    <li><a href="cart.html">Cart</a></li>
+  </ul>
+  <div class="nav-right">
+    <span>Admin</span>
+    <span class="cart">🛒</span>
+  </div>
+</nav>
+
+<div class="cart-container">
+  <h1>Shopping Cart</h1>
+
+  <div id="emptyCart" class="empty-message">
+    <p>Your cart is empty</p>
+    <a href="shop.html" class="btn">Continue Shopping</a>
+  </div>
+
+  <div id="cartContent" style="display: none;">
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="cartItems">
+      </tbody>
+    </table>
+
+    <div class="cart-summary">
+      <h3>Order Summary</h3>
+      <div class="summary-row">
+        <span>Subtotal:</span>
+        <span id="subtotal">Rs. 0</span>
+      </div>
+      <div class="summary-row">
+        <span>Tax (10%):</span>
+        <span id="tax">Rs. 0</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total:</span>
+        <span id="total">Rs. 0</span>
+      </div>
+
+      <button class="checkout-btn">Proceed to Checkout</button>
+      <a href="shop.html" class="continue-shopping-btn">Continue Shopping</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/cart.js"></script>
+</body>
+</html>
