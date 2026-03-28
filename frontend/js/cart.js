@@ -41,7 +41,7 @@ function removeFromCart(index) {
     loadCart();
 }
 
-// Update cart totals
+
 function updateCartTotals() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     
@@ -49,7 +49,7 @@ function updateCartTotals() {
         return total + product.price;
     }, 0);
 
-    const tax = subtotal * 0.10; // 10% tax
+    const tax = subtotal * 0.10; 
     const total = subtotal + tax;
 
     document.getElementById('subtotal').textContent = `Rs. ${subtotal.toFixed(2)}`;
@@ -57,7 +57,7 @@ function updateCartTotals() {
     document.getElementById('total').textContent = `Rs. ${total.toFixed(2)}`;
 }
 
-// Handle checkout
+
 function handleCheckout() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     
@@ -66,27 +66,24 @@ function handleCheckout() {
         return;
     }
 
-    // Calculate total
+   
     const subtotal = cart.reduce((total, product) => {
         return total + product.price;
     }, 0);
     const tax = subtotal * 0.10;
     const total = subtotal + tax;
 
-    // Here you can add your checkout logic
-    // For now, just show an alert
+   
     alert(`Processing checkout for Rs. ${total.toFixed(2)}`);
     
-    // Clear cart after checkout (optional)
-    // localStorage.setItem('cart', JSON.stringify([]));
-    // loadCart();
+   ;
 }
 
-// Initialize on page load
+// Initialize 
 window.onload = () => {
     loadCart();
 
-    // Add checkout button listener
+    
     const checkoutBtn = document.querySelector('.checkout-btn');
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', handleCheckout);

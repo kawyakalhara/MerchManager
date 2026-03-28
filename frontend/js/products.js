@@ -39,8 +39,6 @@ function displayProducts(productsToShow = products) {
           
           </div>
 
-          
-
           <h3>${product.name}</h3>
           <p class="price">Rs. ${product.price}</p>
           <button class="btn"
@@ -103,9 +101,8 @@ function setupFilterListeners() {
     }
 }
 
-// ===============================
-// CART (TEMP – FRONTEND ONLY)
-// ===============================
+
+
 function addToCart(id) {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const item = products.find(p => p.id === id);
@@ -126,9 +123,7 @@ function updateCartCount() {
     }
 }
 
-// ===============================
-// NAVIGATION
-// ===============================
+
 function viewProduct(productId) {
     window.location.href = `product.html?id=${productId}`;
 }

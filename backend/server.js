@@ -5,14 +5,10 @@ const db = require("./db");
 const app = express();
 const PORT = 3000;
 
-// middleware
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "../frontend")));
 
-// ---- API ROUTES ----
-
-// GET all products
 app.get("/api/products", (req, res) => {
     console.log("GET /api/products hit");
 
@@ -29,7 +25,6 @@ app.get("/api/products", (req, res) => {
     });
 });
 
-// GET single product by ID
 app.get("/api/products/:id", (req, res) => {
     const productId = req.params.id;
 
@@ -51,13 +46,6 @@ app.get("/api/products/:id", (req, res) => {
     });
 });
 
-
-// health check (keep this)
-app.get("/api/health", (req, res) => {
-    res.json({ status: "Backend is running" });
-});
-
-// start server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
